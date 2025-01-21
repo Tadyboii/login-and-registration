@@ -1,4 +1,4 @@
-# User Login and Registration System
+# User Login and Registration System in Spring Boot
 
 This is a Spring Boot application implemented in Kotlin, designed to provide a user login and registration system. The application uses PostgreSQL for the database, the Exposed framework for ORM, Thymeleaf for rendering, and Docker for containerization. Gradle is used as the build tool.
 
