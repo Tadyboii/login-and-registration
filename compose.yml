@@ -1,10 +1,22 @@
 services:
-    postgres:
-        image: 'postgres:latest'
-        container_name: 'postgres_db'
-        environment:
-        - 'POSTGRES_DB=${DATABASE_NAME}'
-        - 'POSTGRES_PASSWORD=${DATABASE_PASSWORD}'
-        - 'POSTGRES_USER=${DATABASE_USER}'
-        ports:
-        - '${DATABASE_PORT}:5432'
+  backend:
+    build: .
+    environment:
+      - DATABASE_HOST=postgres_db
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=5432
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'postgres_db'
+    environment:
+      - 'POSTGRES_DB=${DATABASE_NAME}'
+      - 'POSTGRES_PASSWORD=${DATABASE_PASSWORD}'
+      - 'POSTGRES_USER=${DATABASE_USER}'
+    ports:
+      - '5432:5432'
