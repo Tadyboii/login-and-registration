@@ -45,7 +45,7 @@ docker-compose up --build
 ```
 
 ### 4. Access the Application
-Once the application is running, you can access it at [http://localhost:8080](http://localhost:8080).
+Once the application is running, you can access it at [http://localhost:8080](http://localhost:8080) if hosted locally.
 
 
 ## Build and Run Without Docker
