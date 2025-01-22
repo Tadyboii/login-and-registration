@@ -24,8 +24,8 @@ This is a Spring Boot application implemented in Kotlin, designed to provide a u
 ## Getting Started
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/Tadyboii/login-and-registration.git
+cd login-and-registration
 ```
 
 ### 2. Create an `.env` File
