@@ -5,7 +5,7 @@ import dev.Tadyboii.login_and_registration.repository.UserRepository
 import org.springframework.stereotype.Service
 
 @Service
-class UserService (private val userRepository: UserRepository) {
+class UserService(private val userRepository: UserRepository) {
     fun getUsers(): List<UserDTO> {
         return userRepository.getUsers()
     }
