@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and push Docker image
+        run: |
+          docker login ghcr.io -u Tadyboii -p ${{ secrets.GH_PAT }}
+          docker build . -t ghcr.io/tadyboii/login-and-registration:latest
+          docker push ghcr.io/tadyboii/login-and-registration:latest
