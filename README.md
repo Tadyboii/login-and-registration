@@ -35,30 +35,23 @@ DATABASE_NAME=your_database_name
 DATABASE_USER=your_database_user
 DATABASE_PASSWORD=your_database_password
 DATABASE_HOST=your_database_host
+DATABASE_PORT=your_database_port
 ```
-Replace `your_database_name`, `your_database_user`, `your_database_password`, and `your_database_host` with appropriate values.
+Replace `your_database_name`, `your_database_user`, `your_database_password`, `your_database_host`, and `your_database_port` with your database configuration.
 
-### 3. Build and Run the Application with Docker Compose
-Run the following command to build and start the application:
+### 3. Build and Run the Application 
+Run the following command to install dependencies:
 ```bash
-docker-compose up --build
+./gradlew build
 ```
+Then, run the database service with:
+```bash
+docker-compose up -d
+```
+Finally, run the application by running the `main` method in the `LoginAndRegistrationApplication.kt` class.
 
 ### 4. Access the Application
 Once the application is running, you can access it at [http://localhost:8080](http://localhost:8080) if hosted locally.
-
-
-## Build and Run Without Docker
-If you prefer to run the application without Docker:
-1. Configure the database connection in `application.properties` or `application.yml`.
-2. Build the application using Gradle:
-   ```bash
-   ./gradlew build
-   ```
-3. Run the application:
-   ```bash
-   java -jar build/libs/<your-application-jar>.jar
-   ```
 
 ## Contributing
 Feel free to fork the repository and make contributions. Open a pull request to submit your changes.
